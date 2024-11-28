@@ -60,6 +60,7 @@ numpy==1.26.4
 opencv-python==4.10.0.84
 orjson==3.10.12
 packaging==24.2
+pywin32==308
 pandas==2.2.3
 pillow==11.0.0
 propcache==0.2.0
