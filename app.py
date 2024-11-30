@@ -8,7 +8,8 @@ import torch
 import os
 import io
 import pyttsx3
-
+import easyocr
+reader = easyocr.Reader(['en'])  # Load English language model
 
 import platform
 
