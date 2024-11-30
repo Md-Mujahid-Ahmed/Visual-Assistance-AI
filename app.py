@@ -29,9 +29,28 @@ ai.configure(api_key='AIzaSyDHvo2RmhF-0YkXGvbw8uFeLDHL66Gvas0')
 
 
 # Streamlit app setup
-st.set_page_config(page_title="Visual Assistance AI 👓🤖", layout="centered")
-st.title("Visual Assistance AI 👓🤖")
-st.header("Empowering Visually Impaired Individuals 🧠⚡")
+# Streamlit app setup
+st.set_page_config(
+    page_title="VisionAid AI 👓🤖",  # Updated name
+    page_icon="🤖",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
+
+# App title and header
+st.title("**VisionAid AI** 👓🤖")
+st.header("🔍 Empowering Sight Beyond Limits 🧠⚡")
+st.subheader("Bringing Vision to Everyone, Everywhere")
+
+# Footer for creator details
+st.markdown(
+    """
+    ---
+    **Created by [Md Mujahid Ahmed](https://github.com/your-github-profile)**  
+    🌟 Empowering Accessibility through AI 🌟
+    """
+)
+
 
 # Initialize the object detection model (YOLOv5)
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # Load YOLOv5 model for object detection
