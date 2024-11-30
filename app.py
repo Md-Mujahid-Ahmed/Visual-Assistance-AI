@@ -13,7 +13,7 @@ import pyttsx3
 import platform
 
 if platform.system() == "Windows":
-    pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+    pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR"
 elif platform.system() == "Linux":
     # On Linux servers, Tesseract is usually installed at this path
     pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
