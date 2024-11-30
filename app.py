@@ -46,7 +46,7 @@ st.subheader("Bringing Vision to Everyone, Everywhere")
 st.markdown(
     """
     ---
-    **Created by [Md Mujahid Ahmed](https://github.com/your-github-profile)**  
+    **Created by [Md Mujahid Ahmed]**  
     🌟 Empowering Accessibility through AI 🌟
     """
 )
