@@ -91,24 +91,24 @@ if uploaded_image:
         except Exception as e:
             st.error(f"An error occurred during scene understanding: {e}")
 
-    # Perform Text-to-Speech Conversion
-    if "text_to_speech" in selected_features:
-        st.subheader("Text-to-Speech Conversion")
-        try:
-            # Extract text from the image using OCR
-            extracted_text = pytesseract.image_to_string(image)
-            if extracted_text.strip() == "":  # Handle case if OCR does not extract any text
-                st.warning("No text found in the image.")
-            else:
-                st.write("*Extracted Text:*", extracted_text)
-                # Convert text to speech using Google Text-to-Speech
-                tts = gTTS(text=extracted_text, lang='en')
-                # Save audio in a safe directory (e.g., working directory)
-                audio_path = "output_audio.mp3"
-                tts.save(audio_path)  # Save audio as mp3
-                st.audio(audio_path)  # Play the audio
-        except Exception as e:
-            st.error(f"An error occurred during text-to-speech conversion: {e}")
+    # # Perform Text-to-Speech Conversion
+    # if "text_to_speech" in selected_features:
+    #     st.subheader("Text-to-Speech Conversion")
+    #     try:
+    #         # Extract text from the image using OCR
+    #         extracted_text = pytesseract.image_to_string(image)
+    #         if extracted_text.strip() == "":  # Handle case if OCR does not extract any text
+    #             st.warning("No text found in the image.")
+    #         else:
+    #             st.write("*Extracted Text:*", extracted_text)
+    #             # Convert text to speech using Google Text-to-Speech
+    #             tts = gTTS(text=extracted_text, lang='en')
+    #             # Save audio in a safe directory (e.g., working directory)
+    #             audio_path = "output_audio.mp3"
+    #             tts.save(audio_path)  # Save audio as mp3
+    #             st.audio(audio_path)  # Play the audio
+    #     except Exception as e:
+    #         st.error(f"An error occurred during text-to-speech conversion: {e}")
         # Text-to-Speech Conversion
     # if "text_to_speech" in selected_features:
     #     st.subheader("Text-to-Speech Conversion")
@@ -131,7 +131,21 @@ if uploaded_image:
     #         st.success("Text read aloud successfully!")
     # except Exception as e:
     #     st.error(f"An error occurred during text-to-speech conversion: {e}")
-
+    # Text-to-Speech Conversion
+    if "text_to_speech" in selected_features:
+        st.subheader("Text-to-Speech Conversion")
+        try:
+            result = reader.readtext(np.array(image))
+            extracted_text = " ".join([text[1] for text in result])
+            if extracted_text.strip() == "":
+                st.warning("No text found in the image.")
+            else:
+                st.write("*Extracted Text:*", extracted_text)
+                tts = gTTS(text=extracted_text, lang='en')
+                tts.save("output_audio.mp3")
+                st.audio("output_audio.mp3")
+        except Exception as e:
+            st.error(f"Error during text-to-speech conversion: {e}")
 
 
 
