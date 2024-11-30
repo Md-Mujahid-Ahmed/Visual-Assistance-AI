@@ -21,7 +21,7 @@ else:
     raise EnvironmentError("Unsupported platform for Tesseract OCR")
 
 # Tesseract path setup for OCR
-pytesseract.pytesseract.tesseract_cmd = r"C:\\Users\\MUJAHID\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"  
+# pytesseract.pytesseract.tesseract_cmd = r"C:\\Users\\MUJAHID\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"  
 
 # Configure API key for Google Generative AI from environment variables (for security)
 ai.configure(api_key='AIzaSyDHvo2RmhF-0YkXGvbw8uFeLDHL66Gvas0')  
